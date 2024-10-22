@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <h2>Nuestros Servicios</h2>
+    <div class="service">
+        <img src="{{ url_for('static', filename='images/service1.png') }}" alt="Servicio 1" class="servicio">
+        <p>Publicidad innovadora y campañas globales para conectar con nuestros consumidores.</p>
+        <a href="#">Leer más</a>
+    </div>
+    <div class="service">
+        <img src="{{ url_for('static', filename='images/service2.png') }}" alt="Servicio 2" class="servicio">
+        <p>Distribución eficiente de productos a nivel mundial, asegurando la calidad en cada paso.</p>
+        <a href="#">Leer más</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo de Coca-Cola" class="logo">
+    <h2>Bienvenidos a Coca-Cola</h2>
+    <p>Ofrecemos bebidas refrescantes de alta calidad, disponibles en todo el mundo.</p>
+
+    <div class="testimonials">
+        <h3>Testimonios</h3>
+        <p>"¡Un sabor único y refrescante!" - Cliente Satisfecho</p>
+    </div>
+
+    <div class="social-buttons">
+        <a href="https://www.facebook.com/CocaCola" target="_blank">Facebook</a>
+        <a href="https://twitter.com/CocaCola" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/cocacola/" target="_blank">Instagram</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <h2>Últimas Noticias</h2>
+    <div class="news-item">
+        <img src="{{ url_for('static', filename='images/news1.png') }}" alt="Noticia 1" class="quienes">
+        <h3>Coca-Cola lanza una nueva bebida</h3>
+        <p>Descubre la nueva bebida que promete revolucionar el mercado...</p>
+    </div>
+</section>
+{% endblock %}

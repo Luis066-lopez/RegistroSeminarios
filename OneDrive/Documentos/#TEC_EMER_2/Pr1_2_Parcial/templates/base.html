@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>COCA COLA</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="nav-link">Inicio</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">Quiénes Somos</a></li>
+                <li><a href="{{ url_for('services') }}" class="nav-link">Servicios</a></li>
+                <li><a href="{{ url_for('news') }}" class="nav-link">Noticias</a></li>
+                <li><a href="{{ url_for('contact') }}" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 COCA COLA. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

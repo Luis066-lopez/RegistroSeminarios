@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, textarea, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testimonios de Clientes</h1>
+
+    <form action="/agregar_testimonio" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" required></textarea>
+
+        <label for="fecha">Fecha:</label>
+        <input type="timestamp" id="fecha" name="fecha" required>
+
+        <input type="submit" value="Enviar Testimonio">
+    </form>
+
+    <h2>Comentarios de nuestros clientes:</h2>
+    <ul>
+        {% for nombre, comentario in testimonios %}
+            <li><strong>{{ nombre }}:</strong> {{ comentario }}:<strong>{{ fecha }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

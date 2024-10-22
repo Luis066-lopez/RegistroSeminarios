@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <h2>Quiénes Somos</h2>
+    <p>Coca-Cola fue fundada en 1886 y desde entonces ha sido una de las marcas más reconocidas mundialmente.</p>
+    <h3>Misión</h3>
+    <p>Nuestra misión es refrescar al mundo en cuerpo, mente y espíritu.</p>
+    <h3>Visión</h3>
+    <p>Nuestra visión es inspirar momentos de optimismo y felicidad a través de nuestras marcas y acciones.</p>
+    
+    <h3>Equipo de trabajo</h3>
+    <div class="team">
+        <img src="{{ url_for('static', filename='images/team_member1.png') }}" alt="Miembro del equipo" class="quienes">
+        <p>John Doe - Gerente de Operaciones</p>
+        <img src="{{ url_for('static', filename='images/team_member2.png') }}" alt="Miembro del equipo" class="quienes">
+        <p>Jane Smith - Directora de Marketing</p>
+    </div>
+</section>
+{% endblock %}
