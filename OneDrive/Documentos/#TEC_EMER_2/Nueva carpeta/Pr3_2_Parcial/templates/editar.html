@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Registro{% endblock %}
+
+{% block content %}
+<h1 style="text-align:center;">Editar Registro</h1>
+
+<form method="POST" action="{{ url_for('editar', id=registro['id']) }}">
+    <div>
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" value="{{ registro['fecha'] }}" required><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ registro['nombre'] }}" required><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" value="{{ registro['apellidos'] }}" required><br>
+
+        <label for="turno">Turno:</label>
+        <select name="turno" required>
+            <option value="Mañana" {% if registro['turno'] == 'Mañana' %}selected{% endif %}>Mañana</option>
+            <option value="Tarde" {% if registro['turno'] == 'Tarde' %}selected{% endif %}>Tarde</option>
+            <option value="Noche" {% if registro['turno'] == 'Noche' %}selected{% endif %}>Noche</option>
+        </select><br>
+
+        <h3>Seminarios disponibles</h3>
+        <input type="checkbox" name="seminarios" value="Inteligencia Artificial" 
+        {% if 'Inteligencia Artificial' in registro['seminarios'] %}checked{% endif %}> Inteligencia Artificial<br>
+
+        <input type="checkbox" name="seminarios" value="Machine Learning" 
+        {% if 'Machine Learning' in registro['seminarios'] %}checked{% endif %}> Machine Learning<br>
+
+        <input type="checkbox" name="seminarios" value="Simulación con Arena" 
+        {% if 'Simulación con Arena' in registro['seminarios'] %}checked{% endif %}> Simulación con Arena<br>
+
+        <input type="checkbox" name="seminarios" value="Robótica Educativa" 
+        {% if 'Robótica Educativa' in registro['seminarios'] %}checked{% endif %}> Robótica Educativa<br>
+    </div>
+
+    <!-- Botón para enviar los cambios -->
+    <button type="submit">Guardar cambios</button>
+</form>
+
+<!-- Botón para regresar sin editar -->
+<div style="text-align:center;">
+    <a href="{{ url_for('lista_registros') }}"><button type="button">Cancelar</button></a>
+</div>
+
+{% endblock %}

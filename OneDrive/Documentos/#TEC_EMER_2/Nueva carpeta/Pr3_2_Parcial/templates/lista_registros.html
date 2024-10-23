@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Inscritos{% endblock %}
+
+{% block content %}
+<h1 style="text-align:center;">Lista de Inscritos</h1>
+
+<table border="1" style="width:100%;">
+    <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Turno</th>
+        <th>Seminarios</th>
+        <th>Acciones</th>
+    </tr>
+    {% for registro in registros %}
+    <tr>
+        <td>{{ registro.id }}</td>
+        <td>{{ registro.fecha }}</td>
+        <td>{{ registro.nombre }}</td>
+        <td>{{ registro.apellidos }}</td>
+        <td>{{ registro.turno }}</td>
+        <td>{{ registro.seminarios | join(', ') }}</td>
+        <td>
+            <a href="{{ url_for('editar', id=registro.id) }}">Editar</a>
+            <a href="{{ url_for('eliminar', id=registro.id) }}">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div style="text-align:center;">
+    <a href="{{ url_for('index') }}"><button type="button">Añadir Nuevo</button></a>
+</div>
+{% endblock %}

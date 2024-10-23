@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Registro en Seminarios{% endblock %}
+
+{% block content %}
+<h1 style="text-align:center;">Registro en Seminarios</h1>
+<form method="POST" action="/" style="display: flex; justify-content: space-between;">
+    <div>
+        <h2>Datos</h2>
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" required><br>
+        <label for="turno">Turno:</label>
+        <select name="turno" required>
+            <option value="Mañana">Mañana</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noche">Noche</option>
+        </select>
+    </div>
+    <div>
+        <h2>Seminarios disponibles</h2>
+        <input type="checkbox" name="seminarios" value="Inteligencia Artificial"> Inteligencia Artificial<br>
+        <input type="checkbox" name="seminarios" value="Machine Learning"> Machine Learning<br>
+        <input type="checkbox" name="seminarios" value="Simulación con Arena"> Simulación con Arena<br>
+        <input type="checkbox" name="seminarios" value="Robótica Educativa"> Robótica Educativa
+    </div>
+    
+    <!-- Botón de envío dentro del formulario -->
+    <div style="text-align:center;">
+        <button type="submit">Enviar Registro</button>
+    </div>
+</form>
+
+<!-- Botón fuera del formulario para ir a Lista de Registros -->
+<div style="text-align:center;">
+    <a href="{{ url_for('lista_registros') }}"><button type="button">Lista de Registros</button></a>
+</div>
+{% endblock %}
